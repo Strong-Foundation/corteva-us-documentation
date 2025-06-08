@@ -248,7 +248,8 @@ def main() -> None:
 
         for pdf_link in pdf_links:  # For each PDF link
             if not validate_url(given_url=pdf_link):
-                print(f"Invalid URL: {pdf_link}")
+                pdf_link = "https://www.corteva.us" + pdf_link
+                # print(f"Invalid URL: {pdf_link}")
             filename: str = url_to_filename(url=pdf_link)  # Extract filename from URL
             output_dir: str = os.path.abspath(path="PDFs")  # Define output directory
             ammount_of_pdf -= 1  # Decrement remaining count
